@@ -10,15 +10,54 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  var nuevaMatriz = [];
+  for(prop in objeto){
+    nuevaMatriz.push([prop, objeto[prop]]);
+  }
+  return nuevaMatriz;
 }
-
+// for(prop in objeto) recorre todo el objeto leyendo sus propiedades.
+//nuevaMatriz.push porque quiero pushear -meter- esos elementos leidos en una nueva matriz, es decir, en un nuevo arreglo. Se acompaña de 
+//([prop, objeto[prop]]) porque esos son los elementos que van a ser pusheados. 
 
 function numberOfCharacters(string) {
   //La función recibe un string. Recorre el srting y devuelve el caracter con el número de veces que aparece 
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+var objeto={};
+var desorden=string.split("").sort();
+for (let i = 0; i < desorden.length; i++) {
+  if(objeto[desorden[i]]){
+    objeto[desorden[i]]=objeto[desorden[i]]+1;
+  }else {
+    objeto[desorden[i]]=1;
+  } 
 }
+return objeto;
+/*Creo el objeto
+2.- Al desorden lo separo con .split('')
+y lo ordeno con .sort()
+3.- Recorro el desorden con el -for-
+4.- Con el condicional -if- establezco
+lo que voy a preguntarme/reflexionar
+Primero establezco QUÉ: (objeto[desorden[i]]) es decir, el *desorden dentro del indice del objeto>>>>>> y establezco
+opero al abrir llaves {}
+4.1.- que Si * se repite más de 1 vez, entonces vaya sumándolos cada vez de a uno
+4.2 SI NO que los deje igual. (ya con el valor/tantas veces/ que les haya encontrado -por eso el =1)
+Misma explicación para el código de abajo↓
+*/
+//   var pares={};
+//   for (let i = 0; i < string.length; i++) {
+//     if(pares.hasOwnProperty(string[i])){
+//       pares[string[i]]=pares[string[i]]+1
+//    }else {
+//      pares[string[i]]=1;
+//     }
+//   }
+//   return pares;
+}
+
 
 
 function capToFront(s) {
